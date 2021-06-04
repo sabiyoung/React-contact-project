@@ -58,9 +58,9 @@ const CardContent = styled.div`
   }
 `;
 const ImgAvatar = styled(Avatar)`
-  min-width: 100px;
-  min-height: 100px;
-  margin-top: -20px;
+  min-width: 120px;
+  min-height: 120px;
+  margin-top: -35px;
   cursor: pointer;
 
   :hover {
