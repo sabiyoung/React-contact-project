@@ -11,10 +11,13 @@ const ContactCard = ({
   return (
     <CardContainer className="wrapper">
       <CardContent className="cardContent">
-      <div className="avatar"> 
-        <ImgAvatar >
-          <img src={profilePic} alt={`Profile of ${firstName} ${lastName}.`} />
-        </ImgAvatar>
+        <div className="avatar">
+          <ImgAvatar>
+            <img
+              src={profilePic}
+              alt={`Profile of ${firstName} ${lastName}.`}
+            />
+          </ImgAvatar>
         </div>
         <ContactInfo>
           <p>
@@ -23,7 +26,6 @@ const ContactCard = ({
           <p>{phoneNumber}</p>
         </ContactInfo>
         <NewButton>
-          
           <CloseIcon className="button" />
         </NewButton>
       </CardContent>
@@ -51,30 +53,30 @@ const CardContent = styled.div`
   }
   .avatar {
     border-right: 1px solid lightgray;
-    padding-right:20px;
-  
-}
+    padding-right: 20px;
+    
+  }
 `;
 const ImgAvatar = styled(Avatar)`
-min-width:100px;
-min-height:100px;
-margin-top:-20px;
- cursor:pointer;
+  min-width: 100px;
+  min-height: 100px;
+  margin-top: -20px;
+  cursor: pointer;
 
-:hover {
+  :hover {
     opacity: 0.8;
-}
-
+  }
 `;
 
 const ContactInfo = styled.div`
+  margin-right: 23rem;
 `;
 const NewButton = styled.div`
   .button {
     color: white;
     background-color: lightgray;
     border-radius: 50%;
-    border: lightgray;
+    border: none;
     padding: 2px;
   }
 `;
