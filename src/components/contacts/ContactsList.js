@@ -1,12 +1,11 @@
 import ContactCard from "./ContactCard";
 import styled from "styled-components";
 import RadioButtonUncheckedIcon from "@material-ui/icons/RadioButtonUnchecked";
-import Container from 'react-bootstrap/Container'
+import Container from "react-bootstrap/Container";
 
 const ContactList = ({ contacts = [] }) => {
   return (
     <Container>
-  
       <Title className="title">
         <RadioButtonUncheckedIcon className="radio" />
         <p>ContactList</p>
@@ -50,4 +49,3 @@ const Title = styled.div`
     height: 18px;
   }
 `;
-

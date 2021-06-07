@@ -54,7 +54,6 @@ const CardContent = styled.div`
   .avatar {
     border-right: 1px solid lightgray;
     padding-right: 20px;
-    
   }
 `;
 const ImgAvatar = styled(Avatar)`
