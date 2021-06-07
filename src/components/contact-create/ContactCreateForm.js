@@ -1,47 +1,38 @@
-import React from "react";
+import React, { useState} from "react";
+import  styled  from "styled-components";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-class ContactCreateForm extends React.Component {
-    
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            firstName: '',
-            lastName: '',
-            phoneNumber: '',
-            email: '',
-            address: '',
-            profilePic: '',
-        };
-
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+const ContactCreateForm = () => {
+    const[firstname, setFirstname] = useState("");
+    const[lastname, setLastname] = useState("");
+    const[phonenumber, setPhoneNumber] = useState("");
+    const[email, setEmail] = useState("");
+    const[address, setAdress] = useState("");
+    const[profilepic, setProfilePic] = useState("");
+  
+    function handleSubmission(e) {
+        e.preventDefault();
+         console.log("Submitted:", e)
     }
 
-    handleInputChange(event) {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
 
-    handleFormSubmit(event) {
-        event.preventDefault();
-    }
-
-    render() {
         return (
-            <form onSubmit={this.handleFormSubmit}>
-                <div>
-                    <img src={this.state.profilePic} alt="Profile preview." />
+            <Form> 
+    
+            <form onSubmit={ handleSubmission}>
+                <ContactForm>
+                <div >
+                    < AccountCircleIcon className="profilePic"/>
                 </div>
-                <div>
+                <ContactInput>
                     <div>
                         <input
                             type="text"
                             placeholder="First Name"
                             name="firstName"
-                            value={this.state.firstName}
-                            onChange={this.handleInputChange}
+                            value={firstname}
+                            onChange={e => setFirstname(e.target.value)}
                         />
                     </div>
                     <div>
@@ -49,8 +40,8 @@ class ContactCreateForm extends React.Component {
                             type="text"
                             placeholder="Last Name"
                             name="lastName"
-                            value={this.state.lastName}
-                            onChange={this.handleInputChange}
+                            value={lastname}
+                            onChange={e => setLastname(e.target.value)}
                         />
                     </div>
                     <div>
@@ -58,8 +49,8 @@ class ContactCreateForm extends React.Component {
                             type="tel"
                             placeholder="Phone Number"
                             name="phoneNumber"
-                            value={this.state.phoneNumber}
-                            onChange={this.handleInputChange}
+                            value={phonenumber}
+                            onChange={e => setPhoneNumber(e.target.value)}
                         />
                     </div>
                     <div>
@@ -67,8 +58,8 @@ class ContactCreateForm extends React.Component {
                             type="email"
                             placeholder="Email"
                             name="email"
-                            value={this.state.email}
-                            onChange={this.handleInputChange}
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
                         />
                     </div>
                     <div>
@@ -76,8 +67,8 @@ class ContactCreateForm extends React.Component {
                             type="text"
                             placeholder="Address"
                             name="address"
-                            value={this.state.address}
-                            onChange={this.handleInputChange}
+                            value={address}
+                            onChange={e => setAdress(e.target.value)}
                         />
                     </div>
                     <div>
@@ -85,17 +76,55 @@ class ContactCreateForm extends React.Component {
                             type="text"
                             placeholder="Profile Picture Url"
                             name="profilePic"
-                            value={this.state.profilePic}
-                            onChange={this.handleInputChange}
+                            value={profilepic}
+                            onChange={e => setProfilePic(e.target.value)}
                         />
                     </div>
                     <div>
                         <button type="submit">Add Contact</button>
                     </div>
-                </div>
+                </ContactInput>
+                </ContactForm>
             </form>
+            </Form>
         )
     }
-}
 
 export default ContactCreateForm;
+
+const Form = styled.div`
+
+`;
+const ContactForm = styled.div`
+display: flex;
+.profilePic{
+    height: 120px;
+   width: 300px;
+   padding-left:60px;
+   padding-top:20px;
+   color: gray;
+}
+`;
+const ContactInput = styled.div`
+margin-left:-60px;
+input {
+    padding-top: 25px;
+    width: 300px;
+    border: none;
+    border-bottom:1px solid #333;
+    background-color: lightgray;
+    font-size:20px;
+    color: #111;
+
+}
+button {
+    text-transform:uppercase;
+    background-color: #aaa;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+  
+}
+`;

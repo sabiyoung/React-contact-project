@@ -1,11 +1,31 @@
 import ContactCreateForm from "./ContactCreateForm";
-
+import  styled  from "styled-components";
+import Container from 'react-bootstrap/Container';
 const ContactCreatePage = () => {
     return (
-        <div>
+        <Container>
+        <Wrapper>
+            <FormWrapper>
             <ContactCreateForm />
-        </div>
+            </FormWrapper>
+        </Wrapper>
+        </Container>
     )
 }
 
 export default ContactCreatePage;
+
+const Wrapper = styled.div`
+flex-direction: column;
+align-items: center;
+background-color: lightgray;
+height: 600px;
+width: 800px;
+margin-top: 120px;
+padding-top:5rem;
+margin-left:200px;
+`;
+const FormWrapper = styled.div`
+padding-top:70px ;
+
+`;

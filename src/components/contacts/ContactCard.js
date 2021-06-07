@@ -37,10 +37,10 @@ const CardContainer = styled.div`
   z-index: 1;
   background-color: white;
   height: 130px;
-  width: 800px;
+  width: 700px;
   box-shadow: 0 6px 18px -9px rgba(0, 0, 0, 0.75);
-  margin-top: 30px;
-  margin-left: 80px;
+  margin-top: 20px;
+  margin-left: 60px;
 `;
 
 const CardContent = styled.div`
@@ -69,7 +69,7 @@ const ImgAvatar = styled(Avatar)`
 `;
 
 const ContactInfo = styled.div`
-  margin-right: 23rem;
+  margin-right: 16rem;
 `;
 const NewButton = styled.div`
   .button {
